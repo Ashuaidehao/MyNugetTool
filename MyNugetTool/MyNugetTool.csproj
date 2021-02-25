@@ -12,7 +12,7 @@
     <PackageId>mynugettool</PackageId>
     <PackageOutputPath>./packages</PackageOutputPath>
     <!--修改nuget打包,包内的输出目录-->
-    <BuildOutputTargetFolder>tool</BuildOutputTargetFolder>
+    <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
 
   </PropertyGroup>
 
