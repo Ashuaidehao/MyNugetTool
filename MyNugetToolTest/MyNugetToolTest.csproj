@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <!--<PropertyGroup>
+    <NeonExe Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">"$(MSBuildThisFileDirectory)/net46/ts-gen.exe"</NeonExe>
+    <NeonExe Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' OR '$(TargetFrameworkIdentifier)' == '.NETStandard'">dotnet "$(MSBuildThisFileDirectory)/net5.0/MyNugetTool.dll"</NeonExe>
+    <TypescriptOutput>"$(MSBuildProjectDir)/mytool/"</TypescriptOutput>
+    <NamespaceFilter>$(RootNamespace).Typescript</NamespaceFilter>
+  </PropertyGroup>-->
+
+
+
+  <Target Name="NeoBuild" AfterTargets="AfterBuild">
+    <Exec WorkingDirectory="$(OutputPath)" Command="$(mynugettool)"></Exec>
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="mynugettool" Version="1.0.0" />
+  </ItemGroup>
+</Project>
